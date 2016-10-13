@@ -18,3 +18,6 @@ or
 <input class="input2" name="Valor2" id="Valor2">  
 <script>$('.input2').prevalue('R$');</script>
 ```
+
+##Exemple
+[https://cdn.rawgit.com/figuarnieri/prevalue/master/index.html](https://cdn.rawgit.com/figuarnieri/prevalue/master/index.html)
