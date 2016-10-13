@@ -1,4 +1,4 @@
-(function($){
+;(function($){
     $.fn.prevalue = function(prevalue){
         $(this).each(function(e, f){
             var valor = prevalue||f.getAttribute('data-prevalue')
@@ -10,4 +10,4 @@
             $(f).css({paddingLeft: (f.previousElementSibling.clientWidth-1)+'px'});
         });
     }
-})(jQuery)
+})(jQuery);
