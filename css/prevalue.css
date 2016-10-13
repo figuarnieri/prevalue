@@ -1,0 +1,5 @@
+.prevalue-wrap{position: relative;}
+.prevalue-value{position: absolute;left: 0;font-size: inherit;color: inherit;}
+.prevalue-input{width: 100%;border-style: none;outline-style: none;;}
+/* CUSTOM INPUT TOP/LEFT/FONT */
+.prevalue-value{top: 5px;padding-left: 5px;}
