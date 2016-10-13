@@ -20,4 +20,4 @@ or
 ```
 
 ##Exemple
-[https://cdn.rawgit.com/figuarnieri/prevalue/master/index.html](https://cdn.rawgit.com/figuarnieri/prevalue/master/index.html)
+<a href="https://cdn.rawgit.com/figuarnieri/prevalue/master/index.html" target="_blank">External Link</a>
