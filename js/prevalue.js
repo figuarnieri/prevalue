@@ -27,10 +27,10 @@ $.fn.prevalue = function(option){
     });
 };
 $(function(){
-    document.querySelectorAll('[data-prevalue]').forEach(function(e, f){
-        $(e).prevalue({value: e.dataset.prevalue});
+    $('[data-prevalue]').each(function(e, f){
+        $(f).prevalue({value: f.dataset.prevalue});
     });
-    document.querySelectorAll('[data-prevalue-end]').forEach(function(e, f){
-        $(e).prevalue({value: e.dataset.prevalueEnd, end: true});
+    $('[data-prevalue-end]').each(function(e, f){
+        $(f).prevalue({value: f.dataset.prevalueEnd, end: true});
     });
 })
