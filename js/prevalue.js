@@ -4,25 +4,36 @@ $.fn.prevalue = function(option){
         , end: false
     }, option);
     this.each(function(e, f){
-        var valor = (typeof option==='string') ? option : (item.value||f.getAttribute('data-prevalue')) 
-        , id = f.id
+        var t = $(f)
+        , valor = (typeof option==='string') ? option : (item.value||t.attr('data-prevalue')) 
+        , id = t.attr('id')
+        , form = t.closest('form');
         ;
         if(id.trim().length===0){
             id = 'fake_id_'+Date.now();
-            f.id = id;
+            t.attr('id', id);
         }
-        $(f).wrap('<span class="'+f.classList+'">').removeAttr('class data-prevalue').addClass('prevalue-input').before('<label for="'+id+'" class="prevalue-value">'+valor+'</label>').parent().addClass('prevalue-wrap');
-        $(f).css({paddingLeft: (f.previousElementSibling.clientWidth)+'px'});
+        t.wrap('<span class="'+f.classList+'">').removeAttr('class data-prevalue').addClass('prevalue-input').before('<label for="'+id+'" class="prevalue-value">'+valor+'</label>').parent().addClass('prevalue-wrap');
+        t.css({paddingLeft: (f.previousElementSibling.clientWidth)+'px'});
         if(item.end){
             var label = $(f.previousElementSibling);
-            $(f).css({paddingLeft: 0}).addClass('prevalue-hidden').removeClass('prevalue-input');
+            t.css({paddingLeft: 0}).addClass('prevalue-hidden').removeClass('prevalue-input');
             label.before('<div class="prevalue-input prevalue-end-input" contenteditable="true" />').parent().addClass('prevalue-end');
             label.prev().on('input', function(g){
-                $(f).val(this.innerHTML+item.value)
+                /@/i.test(item.value) ? t.val(this.innerHTML+item.value) : t.val(this.innerHTML);
             });
-            $(f).on('focus', function(g){
+            t.on('focus', function(g){
                 $(this).parent().children('.prevalue-input').trigger('focus');
             })
+        }
+        if(/^((ht|f)tp(|s)):/gmi.test(item.value)){
+            if(!form.hasClass('prevalue-form')){
+                form.addClass('prevalue-form');
+                form.on('submit', function(g){
+                    t.prev().addClass('prevalue-hidden');
+                    t.css({paddingLeft: 0}).val(item.value+f.value);
+                })
+            }
         }
     });
 };
