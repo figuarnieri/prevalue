@@ -11,26 +11,27 @@
 		.label{width: 20%;float: left;text-align: right;padding: 5px;background-color: #eee;height: 30px;margin-bottom: 5px;}
 		.input{width: 80%;border: 1px solid #ccc;float: left;padding: 5px;height: 30px;margin-bottom: 5px;font-size: 14px;}
 		.button{width: 100%;border: 1px solid #888;border-bottom-width: 2px;background-color: #999;color: #555;border-radius: 4px;font-size: 25px;cursor: pointer;padding: 3px;}
+		.r{background-color: #f00;}
 	</style>
 	<link rel="stylesheet" href="css/prevalue.css">
 	<script src="js/jquery-3.1.1.js"></script>
 	<script src="js/prevalue.js"></script>
 	<script>
 	$(function(){
-		//$('[data-prevalue]').prevalue();
-		$('#Final2').prevalue({value: '.com.br',end: true});
+		$('#Nome').prevalue({value: 'Sr(a).'});
+		$('#Final').prevalue({value: '.domain.com.br',end: true});
 	})
 	</script>
 </head>
 <body class="cf">
 	<form action="" method="post">
-		<label class="label" for="Nome1">No prevalue:</label><input class="input nas" type="text" name="Nome1" id="Nome1" value="Sr(a).">
-		<label class="label" for="Nome">With Name:</label><input class="input nas" type="text" name="Nome" id="Nome" data-prevalue="Sr(a).">
+		<label class="label" for="Nome">With inline script:</label><input class="input nas" type="text" name="Nome" id="Nome">
+		<label class="label" for="PlaceholderFixed">With [data-prevalue]:</label><input class="input nas" type="text" name="PlaceholderFixed" id="PlaceholderFixed" data-prevalue="Placeholder Fixed:">
 		<label class="label" for="Valor">Price:</label><input class="input" type="text" name="Valor" id="Valor" data-prevalue="R$">
 		<label class="label" for="URL">URL:</label><input class="input" type="text" name="URL" id="URL" data-prevalue="http://www.ibaro.com.br/">
 		<label class="label" for="Busca">Icon:</label><input class="input" type="text" name="Busca" id="Busca" data-prevalue="&#128269;">
-		<label class="label" for="Final">End field:</label><input class="input" type="text" name="Final" id="Final" data-prevalue-end="@gmail.com">
-		<label class="label" for="Final2">End field (2):</label><input class="input" type="text" name="Final2" id="Final2">
+		<label class="label" for="Final">With inline script:</label><input class="input" type="text" name="Final" id="Final">
+		<label class="label" for="Final2">With [data-prevalue-end]:</label><input class="input" type="text" name="Final2" id="Final2" data-prevalue-end="@gmail.com">
 		<button class="button">ENVIAR</button>
 	</form>
 </body>

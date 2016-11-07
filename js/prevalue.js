@@ -7,7 +7,7 @@ $.fn.prevalue = function(option){
         var t = $(f)
         , valor = (typeof option==='string') ? option : (item.value||t.attr('data-prevalue')) 
         , id = t.attr('id')
-        , form = t.closest('form');
+        , form = t.closest('form')
         ;
         if(id.trim().length===0){
             id = 'fake_id_'+Date.now();
@@ -24,7 +24,7 @@ $.fn.prevalue = function(option){
             });
             t.on('focus', function(g){
                 $(this).parent().children('.prevalue-input').trigger('focus');
-            })
+            });
         }
         if(/^((ht|f)tp(|s)):/gmi.test(item.value)){
             if(!form.hasClass('prevalue-form')){
