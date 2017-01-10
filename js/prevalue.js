@@ -30,9 +30,11 @@ $.fn.prevalue = function(option){
 };
 $(function(){
     $('[data-prevalue]').each(function(e, f){
-        $(f).prevalue({value: f.dataset.prevalue});
+        var val = $(f).data('prevalue');
+        $(f).prevalue({value: val});
     });
     $('[data-prevalue-end]').each(function(e, f){
-        $(f).prevalue({value: f.dataset.prevalueEnd, end: true});
+        var val = $(f).data('prevalueEnd');
+        $(f).prevalue({value: val, end: true});
     });
 })

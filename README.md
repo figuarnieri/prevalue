@@ -11,12 +11,20 @@ Pre value fixed on input.
 ##Use  
 ```html
 <input class="input1" data-prevalue="R$" name="Valor1" id="Valor1">  
-<script>$('.input1').prevalue();</script>  
 ```
 or  
 ```html
-<input class="input2" name="Valor2" id="Valor2">  
-<script>$('.input2').prevalue('R$');</script>
+<input class="input2" data-prevalue-end="@gmail.com" name="Valor2" id="Valor2">  
+```
+or  
+```html
+<input class="input3" name="Valor3" id="Valor3">  
+<script>$('.input2').prevalue({value: 'R$'});</script>
+```
+or  
+```html
+<input class="input4" name="Valor4" id="Valor4">  
+<script>$('.input4').prevalue({value: '@gmail.com',end: true});</script>
 ```
 
 ##Exemple
